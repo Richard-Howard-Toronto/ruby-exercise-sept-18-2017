@@ -7,10 +7,12 @@
 # this is a program to measure the speed at which a person reached their house
 
 distance_from_house_var = 6
+count_var = 0
 walk_speed = 1.0
 run_speed = 1.5
+initial_energy_level = 10000  #kilojoules of energy, roughly 2300 calories
 
-while distance_from_house_var > 0
+while distance_from_house_var >= 0
 
   puts "would you like to walk or run?"
   response_var = gets.chomp.to_s
@@ -19,7 +21,13 @@ while distance_from_house_var > 0
 
       puts "you are less than #{run_speed} distance from house so you end up walking the last mile and your distance is zero, you are home !"
 
+      break
+
   else
+
+    count_var += 1  #this is to calculate the number of walks and runs
+
+    puts "count is #{count_var}"
 
     if response_var == "walk"
       puts "you are walking"
@@ -36,9 +44,9 @@ while distance_from_house_var > 0
 
     end #if
 
-    end #while
-
   end #if
+
+  end #while
 
 puts "you are home!!!!!!!!"
 
