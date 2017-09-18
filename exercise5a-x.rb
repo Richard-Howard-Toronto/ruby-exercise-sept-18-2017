@@ -10,13 +10,12 @@ distance_from_house_var = 6
 count_var = 0
 walk_speed = 1.0
 run_speed = 1.5
-initial_energy_level = 10000  #kilojoules of energy, roughly 2300 calories
-walk_energy_consumed = 1000 # per hour
-run_energy_consumed = 3000 # per hour
+energy_level = 10000  #kilojoules of energy, roughly 2300 calories
+energy_consumed = 2000 # per hour
+remaining_energy = energy_level - energy_consumed
 
 
-
-while distance_from_house_var >= 0
+while distance_from_house_var > 0
 
   puts "would you like to walk or run?"
   response_var = gets.chomp.to_s
@@ -28,8 +27,6 @@ while distance_from_house_var >= 0
       break
 
   else
-
-    count_var += 1  #this is to calculate the number of walks and runs
 
     if response_var == "walk"
       puts "you are walking"
@@ -50,6 +47,7 @@ while distance_from_house_var >= 0
   end #if
 
   end #while
+
 
 puts "you are home!!!!!!!!"
 
